@@ -17,21 +17,15 @@ class CreateArchivesTable extends Migration
             $table->increments('id');
             $table->integer('typeid');
             $table->integer('ismake');
-            $table->integer('brandid')->nullable();
             $table->integer('click');
             $table->string('title');
             $table->string('shorttitle')->nullable();
-            $table->string('bdname')->nullable();
-            $table->integer('like')->default(0);
-            $table->integer('unlike')->default(0);
             $table->string('flags')->nullable();
             $table->string('tags')->nullable();
             $table->integer('mid')->default(0);//文档类型
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('write');
-            $table->string('editor')->nullable();
-            $table->smallInteger('editorid')->nullable();
             $table->string('litpic')->nullable();
             $table->smallInteger('dutyadmin');
             $table->mediumText('imagepics')->nullable();//品牌图集
@@ -47,8 +41,6 @@ class CreateArchivesTable extends Migration
             $table->index('mid');
             $table->index('write');
             $table->index('dutyadmin');
-            $table->index('editorid');
-            $table->index('editor');
             $table->index('published_at');
             $table->index('created_at');
         });
