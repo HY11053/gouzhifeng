@@ -113,66 +113,27 @@ class AdminController extends Controller
         Admin::where('name',auth('admin')->user()->name)->value('type')?:abort(403);
         $users=Admin::pluck('name','id');
         $arguments=$request->all();
-        if ($request->advertisement==0)
-        {
-            $articles=Archive::withoutGlobalScope(PublishedScope::class)->when($request->name, function ($query) use ($request) {
+        $articles=Archive::withoutGlobalScope(PublishedScope::class)->when($request->name, function ($query) use ($request) {
 
             return $query->where('editor',Admin::where('id',$request->name)->value('name'));
 
-            })->when($request->start_at, function ($query) use ($request) {
+        })->when($request->start_at, function ($query) use ($request) {
 
             return $query->where('created_at', '>',Carbon::parse($request->start_at));
 
-            })->when($request->end_at, function ($query) use ($request) {
+        })->when($request->end_at, function ($query) use ($request) {
 
             return $query->where('created_at', '<',Carbon::parse($request->end_at));
 
-            })->when($request->write, function ($query) use ($request) {
+        })->when($request->write, function ($query) use ($request) {
 
             return $query->where('write', Admin::where('id',$request->write)->value('name'));
 
-            })->when($request->ismake, function ($query) use ($request) {
+        })->when($request->ismake, function ($query) use ($request) {
 
             return $query->where('ismake',1);
 
-            })->paginate(50);
-
-        }elseif ($request->advertisement==1)
-        {
-            $articles=Brandarticle::withoutGlobalScope(PublishedScope::class)->when($request->name, function ($query) use ($request) {
-
-                return $query->where('editor',Admin::where('id',$request->name)->value('name'));
-
-            })->when($request->write, function ($query) use ($request) {
-
-                return $query->where('write', Admin::where('id',$request->write)->value('name'));
-
-            })->when($request->start_at, function ($query) use ($request) {
-
-                return $query->where('created_at', '>',Carbon::parse($request->start_at));
-
-            })->when($request->end_at, function ($query) use ($request) {
-
-                return $query->where('created_at', '<',Carbon::parse($request->end_at));
-
-            })->when($request->ismake==1, function ($query) use ($request) {
-
-                return $query->where('ismake',1);
-
-            })->when($request->ismake==2, function ($query) use ($request) {
-
-                return $query->where('ismake',0);
-
-            })->when($request->ismake==3, function ($query) use ($request) {
-
-                return $query->where('ismake',0)->where('isedit',1);
-
-            })->when($request->ismake==4, function ($query) use ($request) {
-
-                return $query->where('ismake',0)->where('isedit',0);
-
-            })->paginate(50);
-        }
+        })->paginate(50);
         return view('admin.article_user_list',compact('users','articles','arguments'));
     }
 
