@@ -14,7 +14,6 @@
                             <th style="width: 10px">id</th>
                             <th>姓名</th>
                             <th>普通文档</th>
-                            <th>品牌文档</th>
                             <th>今日总计</th>
                             <th>总计添加</th>
                         </tr>
@@ -23,9 +22,8 @@
                                 <td>{{$user->id}}.</td>
                                 <td>{{$user->name}}</td>
                                 <td>@if(\App\AdminModel\Archive::where('created_at','>',\Carbon\Carbon::today())->where('dutyadmin',$user->id)->count()) <strong style="color: red"> {{\App\AdminModel\Archive::where('created_at','>',\Carbon\Carbon::today())->where('dutyadmin',$user->id)->count()}} </strong>@endif </td>
-                                <td>@if(\App\AdminModel\Brandarticle::where('created_at','>',\Carbon\Carbon::today())->where('dutyadmin',$user->id)->count()) <strong style="color: red">{{\App\AdminModel\Brandarticle::where('created_at','>',\Carbon\Carbon::today())->where('dutyadmin',$user->id)->count()}}</strong>@endif  </td>
-                                <td>{{(\App\AdminModel\Archive::where('created_at','>',\Carbon\Carbon::today())->where('created_at','<',\Carbon\Carbon::tomorrow())->where('dutyadmin',$user->id)->count())+(\App\AdminModel\Brandarticle::where('created_at','>',\Carbon\Carbon::today())->where('created_at','<',\Carbon\Carbon::tomorrow())->where('dutyadmin',$user->id)->count())}} </td>
-                                <td>{{(\App\AdminModel\Archive::where('created_at','>',\Carbon\Carbon::today())->where('dutyadmin',$user->id)->count())+(\App\AdminModel\Brandarticle::where('created_at','>',\Carbon\Carbon::today())->where('dutyadmin',$user->id)->count())}} </td>
+                                <td>{{(\App\AdminModel\Archive::where('created_at','>',\Carbon\Carbon::today())->where('created_at','<',\Carbon\Carbon::tomorrow())->where('dutyadmin',$user->id)->count())}} </td>
+                                <td>{{(\App\AdminModel\Archive::where('dutyadmin',$user->id)->count())}} </td>
                             </tr>
                             <tr>
                         @endforeach

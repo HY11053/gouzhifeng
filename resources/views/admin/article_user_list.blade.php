@@ -31,22 +31,6 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon">
-                                    <i class="fa fa-location-arrow" style="width:10px;"></i>
-                                </div>
-                                {{Form::select('advertisement', ['普通文档','知识文档','品牌文档'], null,array('class'=>'form-control select2 pull-right','style'=>'width: 150px;','data-placeholder'=>"文章类型",'multiple'=>"multiple"))}}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-user" style="width:10px;"></i>
-                                </div>
-                                {{Form::select('name', $users, null,array('class'=>'form-control select2  pull-right','style'=>'width: 100%','style'=>'width: 150px;','data-placeholder'=>"修改人员",'multiple'=>"multiple"))}}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">
                                     <i class="fa fa-edit" style="width:10px;"></i>
                                 </div>
                                 {{Form::select('write', $users, null,array('class'=>'form-control select2  pull-right','style'=>'width: 100%','style'=>'width: 150px;','data-placeholder'=>"发布人员",'multiple'=>"multiple"))}}
@@ -57,7 +41,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-line-chart" style="width:10px;"></i>
                                 </div>
-                                {{Form::select('ismake', [1=>'已审核',2=>'未审核',3=>'已修改',4=>'未修改'], null,array('class'=>'form-control select2  pull-right','style'=>'width: 100%','style'=>'width: 150px;','data-placeholder'=>"文档状态",'multiple'=>"multiple"))}}
+                                {{Form::select('ismake', [1=>'已审核',2=>'未审核'], null,array('class'=>'form-control select2  pull-right','style'=>'width: 100%','style'=>'width: 150px;','data-placeholder'=>"文档状态",'multiple'=>"multiple"))}}
 
                             </div>
                         </div>
@@ -86,11 +70,7 @@
                                 <td>@if($article->editor) {{$article->editor}} @else {{$article->write}} @endif</td>
                                 <td>{{$article->click}}</td>
                                 <td>@if($article->ismake) 已审核 @else 未审核 @endif</td>
-                              @if($article->brandname)
-                                    <td class="astyle"><span class="label label-success"><a href="/xm/{{$article->id}}" target="_blank">预览</a></span><span class="label label-warning"></span></td>
-                                   @else
-                                    <td class="astyle"><span class="label label-success"><a @if($article->mid==1) href="/news/{{$article->id}}" @else href="/wenda/{{$article->id}}" @endif  target="_blank">预览</a></span><span class="label label-warning"></span></td>
-                                @endif
+                                <td class="astyle"><span class="label label-success"><a href="/news/{{$article->id}}.shtml" target="_blank">预览</a></span><span class="label label-warning"></span></td>
                             </tr>
                         @endforeach
                     </table>
