@@ -13,57 +13,14 @@ use Illuminate\Support\Facades\Cache;
 class IndexController extends Controller
 {
     public function Index(){
-        $latestnewslists=Cache::remember('index_latestnewslists',config('app.cachetime')+rand(3600,3600*24),function(){
-            return Archive::where('mid',1)->take(12)->orderBy('id','desc')->get(['id','title']);
-        });
-        $latestbrandlists=Cache::remember('index_latestbrands',config('app.cachetime')+rand(3600,3600*24),function(){
-            return Brandarticle::take(12)->orderBy('id','desc')->get(['id','brandname']);
-        });
-        $asklists=Cache::remember('index_asklists',config('app.cachetime')+rand(3600,3600*24),function(){
-            return Archive::where('mid','>',1)->take(12)->orderBy('click','desc')->get(['id','title']);
-        });
-
-        $brandcounts=Cache::remember('index_brandcount', 60*24*365+rand(1,100), function(){
-            return Brandarticle::count();
-        });
-        $newscounts=Cache::remember('index_newscount', 60*24*365+rand(1,100), function(){
-            return Archive::count()+KnowedgeNew::count();
-        });
-
-        $paihangbangs=Cache::remember('index_paihangbangs',config('app.cachetime')+rand(3600,3600*24),function(){
-            return Brandarticle::take(12)->orderBy('click','desc')->get(['id','brandname','litpic']);
-        });
-        $latestbrandlist2s=Cache::remember('index_latestbrand2s',config('app.cachetime')+rand(3600,3600*24),function(){
-            return Brandarticle::skip(12)->take(108)->orderBy('id','desc')->get(['id','brandname','litpic']);
-        });
-        $allnavs=Cache::remember('index_allnavs',config('app.cachetime')+rand(3600,3600*24),function(){
-            $toplists=Arctype::where('reid',0)->orderBy('sortrank','asc')->take(12)->pluck('real_path','id');
-            $allnavs=[];
-            foreach ($toplists as $topid=>$toplist){
-                $allnavs[$toplist]=Arctype::where('reid',$topid)->pluck('typename','id')->toArray();
-            }
-         return $allnavs;
-        });
-        $latestbrandlist3s=Cache::remember('index_latestbrand3s',config('app.cachetime')+rand(3600,3600*24),function(){
-            return Brandarticle::take(27)->orderBy('click','desc')->get(['id','brandname','litpic']);
-        });
-        $zhishilists=Cache::remember('index_zhishilists',config('app.cachetime')+rand(3600,3600*24),function(){
-            $knowledges=KnowedgeNew::take(13)->orderBy('id','desc')->get(['id','title','typeid'])->toArray();
-            foreach ($knowledges as $key=>$knowledge){
-                $knowledges[$key]['typename']=Arctype::where('id',$knowledge['typeid'])->value('typename');
-                $knowledges[$key]['topreal_path']=Arctype::where('id',Arctype::where('id',$knowledge['typeid'])->value('reid'))->value('real_path');
-            }
-            return $knowledges;
-
-        });
-        $newslist2s=Cache::remember('index_newslist2s',config('app.cachetime')+rand(3600,3600*24),function(){
-            $newslists= Archive::where('mid',1)->skip(12)->take(13)->orderBy('id','desc')->get(['id','title','typeid'])->toArray();
-            foreach ($newslists as $key=>$newslist) {
-                $newslists[$key]['typename']=Arctype::where('id',$newslist['typeid'])->value('typename');
-                $newslists[$key]['topreal_path']=Arctype::where('id',Arctype::where('id',$newslist['typeid'])->value('reid'))->value('real_path');
-            }
-            return $newslists;
-        });
-        return view('frontend.index',compact('latestnewslists','latestbrandlists','asklists','brandcounts','newscounts','latestbrandlist2s','paihangbangs','latestbrandlist3s','newslist2s','zhishilists','allnavs'));
+        $prodcutiontypes=Arctype::where('reid',2)->take(3)->orderBy('id','asc')->pluck('typename');
+        $production1s=Archive::where('typeid',3)->take(4)->orderBy('id','desc')->get(['id','title','typeid','litpic']);
+        $production2s=Archive::where('typeid',4)->take(4)->orderBy('id','desc')->get(['id','title','typeid','litpic']);
+        $production3s=Archive::where('typeid',10)->take(4)->orderBy('id','desc')->get(['id','title','typeid','litpic']);
+        $dianmians=Archive::where('typeid',5)->latest()->take(6)->get(['id','title','typeid','litpic']);
+        $cgsnew=Archive::where('typeid',7)->take(1)->orderBy('id','desc')->where('flags','like','%c%')->get(['id','title','typeid','litpic']);
+        $gsnews=Archive::where('typeid',7)->latest()->take(5)->get(['id','title','typeid','litpic']);
+        $jmnews=Archive::where('typeid',8)->latest()->take(12)->get(['id','title','typeid','litpic']);
+        return view('frontend.index',compact('prodcutiontypes','production1s','production2s','production3s','dianmians','gsnews','jmnews','cgsnew'));
     }
 }

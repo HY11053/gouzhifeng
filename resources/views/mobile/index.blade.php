@@ -2,230 +2,89 @@
 @section('title'){{config('app.webname')}}@stop
 @section('keywords'){{config('app.keywords')}}@stop
 @section('description'){{config('app.description')}}@stop
-@section('main_content')
-    <div class="lunbo">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <li class="swiper-slide"><a href="/busInfo/31402.html"><img src="/mobile/images/dongfangruili.jpg" alt="东方瑞丽洗衣" /></a></li>
-                <li class="swiper-slide"><a href="/busInfo/20582.html"><img src="/mobile/images/juneng.png" alt="聚能教育加盟" /></a></li>
+@section('main')
+    <header>
+        <div id="container">
+            <div class="sections">
+                <div class="section" id="section0"><img src="/mobile/images/20181017114433335249.jpg"></div>
+                <div class="section" id="section2"><img src="/mobile/images/20181017114447291076.jpg"></div>
+                <div class="section" id="section1"><img src="/mobile/images/20181017114447291076.jpg" ></div>
+                <div class="section" id="section3"><img src="/mobile/images/20200601172444.jpg"></div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
-    </div>
-    <div class="smalllist clearfix">
-        <div class="small-box">
-            <a href="/cyms">
-                <img src="/mobile/images/canyin.png"/><span>餐饮美食</span>
-            </a>
+        <div class="i_abo_box">
+            <div class="i_abo_title"><h1>关于国潮茶饮-满气茶奶茶</h1></div>
+            <div class="i_abo_m">   国潮新中式茶饮—满气茶奶茶，隶属于南京九州盛世餐饮管理有限公司，致力于结合中国深厚的文化底蕴，创造茶饮行业新价值，不盲从，敢不同。随处可见的京剧、中国红、中式装修风格、开发的中式周边产品都有浓厚的中国文化特色，并且满气茶相信……<a href="/xinwen/2019121912.html">更多</a></div>
         </div>
-        <div class="small-box">
-            <a href="/jywl" class="rightbox">
-                <img src="/mobile/images/jiaoyu.png"/><span>教育培训</span>
-            </a>
-        </div>
-        <div class="small-box">
-            <a href="/myyp">
-                <img src="/mobile/images/muying.png"/><span>母婴幼儿</span>
-            </a>
-        </div>
-        <div class="small-box rightbox">
-            <a href="/jjyp" class="rightbox">
-                <img src="/mobile/images/jiaju.png"/><span>家居用品</span>
-            </a>
-        </div>
-        <div class="small-box rightbox">
-            <a href="/lpsp" class="rightbox">
-                <img src="/mobile/images/shipin.png"/><span>礼品饰品</span>
-            </a>
-        </div>
-        <div class="small-box rightbox">
-            <a href="/jczs" class="rightbox">
-                <img src="/mobile/images/jiancai.png"/><span>建材装饰</span>
-            </a>
-        </div>
-        <div class="small-box rightbox">
-            <a href="/hbjx" class="rightbox">
-                <img src="/mobile/images/jixie.png"/><span>机械环保</span>
-            </a>
-        </div>
-        <div class="small-box rightbox">
-            <a href="/mrbj" class="rightbox">
-                <img src="/mobile/images/meirong.png"/><span>美容养生</span>
-            </a>
-        </div>
-        <div class="small-box rightbox">
-            <a href="/shfw/179" class="rightbox">
-                <img src="/mobile/images/ganxi.png"/><span>干洗加盟</span>
-            </a>
-        </div>
-        <div class="small-box rightbox">
-            <a href="/shfw/282" class="rightbox">
-                <img src="/mobile/images/lingshou.png"/><span>零售加盟</span>
-            </a>
-        </div>
-    </div>
-    <div class="recommend clearfix">
-        <img src="/mobile/images/icon-kmtt.png">
-        <div id="moocBox">
-            <ul data-id="m_n_a02" data-type="cmsadpos">
-                @foreach($latestnewslists as $latestnewslist)
-                <li><a href="/news/{{$latestnewslist->id}}">{{$latestnewslist->title}}</a></li>
-                @endforeach
-            </ul>
-        </div>
-    </div>
+    </header>
 
-    <div class="brand-containers">
-        <div class="bg-fff mt10 pt20">
-            <div class="mt10 catering-tab-box">
-                <div class="tab-box-flex">
-                    <span class="cur">优选</span>
-                    <span class="">最新</span>
-                    <span class="">餐饮</span>
-                    <span class="">教育</span>
-                    <span class="">母婴</span>
-                </div>
-                <div>
-                    <ul class="catering-list ">
-                        @foreach($youxuanrandlists as $youxuanrandlist)
-                            <li class="anxjm-mper-cnxh fl"> <a href="/xm/{{$youxuanrandlist['id']}}" class="d-b anxjm-mcnxh-img" title="{{$youxuanrandlist['brandname']}}">
-                                    <img alt="{{$youxuanrandlist['brandname']}}" src="{{$youxuanrandlist['litpic']?$youxuanrandlist['litpic']:$youxuanrandlist['litpic']}}"  /></a> <a href="/xm/{{$youxuanrandlist['id']}}" title="{{$youxuanrandlist['brandname']}}" class="d-b anxjm-mcnxh-name text-e font30 color-000 font-weight">{{$youxuanrandlist['brandname']}}</a>
-                                <div class="anxjm-mbjtj-msg o-h">
-                                    <span class="fl font20 color-f85100">&yen;</span>
-                                    <span class="fl font34 color-f85100 font-weight">{{$investmentlists[$youxuanrandlist['tzid']]}}</span>
-                                    <a href="/{{$youxuanrandlist['topreal_path']}}/{{$youxuanrandlist['typeid']}}" title="{{$youxuanrandlist['typename']}}" class="fr anxjm-mtype">{{$youxuanrandlist['typename']}}</a>
-                                </div>
-                            </li>
-                        @endforeach
-                        <div class="clear" style="clear: both;"></div>
-                    </ul>
-                    <ul class="catering-list none">
-                        @foreach($latestbrandlists as $latestbrandlist)
-                            <li class="anxjm-mper-cnxh fl"> <a href="/xm/{{$latestbrandlist['id']}}" class="d-b anxjm-mcnxh-img" title="{{$latestbrandlist['brandname']}}">
-                                    <img alt="{{$latestbrandlist['brandname']}}" src="{{$latestbrandlist['litpic']}}"  /></a> <a href="/xm/{{$latestbrandlist['id']}}" title="{{$latestbrandlist['brandname']}}" class="d-b anxjm-mcnxh-name text-e font30 color-000 font-weight">{{$latestbrandlist['brandname']}}</a>
-                                <div class="anxjm-mbjtj-msg o-h">
-                                    <span class="fl font20 color-f85100">&yen;</span>
-                                    <span class="fl font34 color-f85100 font-weight">{{$investmentlists[$latestbrandlist['tzid']]}}</span>
-                                    <a href="/{{$latestbrandlist['topreal_path']}}/{{$latestbrandlist['typeid']}}" title="{{$latestbrandlist['typename']}}" class="fr anxjm-mtype">{{$latestbrandlist['typename']}}</a>
-                                </div>
-                            </li>
-                        @endforeach
-                        <div class="clear"></div>
-                    </ul>
-                    <ul class="catering-list none">
-                        @foreach($canyinbrandlists as $canyinbrandlist)
-                            <li class="anxjm-mper-cnxh fl"> <a href="/xm/{{$canyinbrandlist['id']}}" class="d-b anxjm-mcnxh-img" title="{{$canyinbrandlist['brandname']}}">
-                                    <img alt="{{$canyinbrandlist['brandname']}}" src="{{$canyinbrandlist['litpic']}}"  /></a> <a href="/xm/{{$canyinbrandlist['id']}}" title="{{$canyinbrandlist['brandname']}}" class="d-b anxjm-mcnxh-name text-e font30 color-000 font-weight">{{$canyinbrandlist['brandname']}}</a>
-                                <div class="anxjm-mbjtj-msg o-h">
-                                    <span class="fl font20 color-f85100">&yen;</span>
-                                    <span class="fl font34 color-f85100 font-weight">{{$investmentlists[$canyinbrandlist['tzid']]}}</span>
-                                    <a href="/{{$canyinbrandlist['topreal_path']}}/{{$canyinbrandlist['typeid']}}" title="{{$canyinbrandlist['typename']}}" class="fr anxjm-mtype">{{$canyinbrandlist['typename']}}</a>
-                                </div>
-                            </li>
-                        @endforeach
-                        <div class="clear"></div>
-                    </ul>
-                    <ul class="catering-list none">
-                        @foreach($jiaoyubrandlists as $jiaoyubrandlist)
-                            <li class="anxjm-mper-cnxh fl"> <a href="/xm/{{$jiaoyubrandlist['id']}}" class="d-b anxjm-mcnxh-img" title="{{$jiaoyubrandlist['brandname']}}">
-                                    <img alt="{{$jiaoyubrandlist['brandname']}}" src="{{$jiaoyubrandlist['litpic']}}"  /></a> <a href="/xm/{{$jiaoyubrandlist['id']}}" title="{{$jiaoyubrandlist['brandname']}}" class="d-b anxjm-mcnxh-name text-e font30 color-000 font-weight">{{$jiaoyubrandlist['brandname']}}</a>
-                                <div class="anxjm-mbjtj-msg o-h">
-                                    <span class="fl font20 color-f85100">&yen;</span>
-                                    <span class="fl font34 color-f85100 font-weight">{{$investmentlists[$jiaoyubrandlist['tzid']]}}</span>
-                                    <a href="/{{$jiaoyubrandlist['topreal_path']}}/{{$jiaoyubrandlist['typeid']}}" title="{{$jiaoyubrandlist['typename']}}" class="fr anxjm-mtype">{{$jiaoyubrandlist['typename']}}</a>
-                                </div>
-                            </li>
-                        @endforeach
-                        <div class="clear"></div>
-                    </ul>
-                    <ul class="catering-list none">
-                        @foreach($muyingbrandlists as $muyingbrandlist)
-                            <li class="anxjm-mper-cnxh fl"> <a href="/xm/{{$muyingbrandlist['id']}}" class="d-b anxjm-mcnxh-img" title="{{$muyingbrandlist['brandname']}}">
-                                    <img alt="{{$muyingbrandlist['brandname']}}" src="{{$muyingbrandlist['litpic']}}"  /></a> <a href="/xm/{{$muyingbrandlist['id']}}" title="{{$muyingbrandlist['brandname']}}" class="d-b anxjm-mcnxh-name text-e font30 color-000 font-weight">{{$muyingbrandlist['brandname']}}</a>
-                                <div class="anxjm-mbjtj-msg o-h">
-                                    <span class="fl font20 color-f85100">&yen;</span>
-                                    <span class="fl font34 color-f85100 font-weight">{{$investmentlists[$muyingbrandlist['tzid']]}}</span>
-                                    <a href="/{{$muyingbrandlist['topreal_path']}}/{{$muyingbrandlist['typeid']}}" title="{{$muyingbrandlist['typename']}}" class="fr anxjm-mtype">{{$muyingbrandlist['typename']}}</a>
-                                </div>
-                            </li>
-                        @endforeach
-                        <div class="clear"></div>
-                    </ul>
-                </div>
+    <div class="i_pro_box">
+        <div class="i_pro_m">
+            <div class="i_title">
+                <h6>奶茶产品</h6>
+                <span>满气茶奶茶热门奶茶产品，希望能帮助您快速的了解满气茶奶茶的产品颜值和架构！</span>
             </div>
-        </div>
-    </div>
-    <div class="news-container">
-        <div class="anxjm-mper-section">
-            <div class="o-h">
-                <h3 class="o-h fl"><span class="fl d-b font40 color-000 font-weight m-r10"><i class="iconfont icon-kaocha"></i> 加盟资讯</span></h3>
-            </div>
-            <ul class="anxjm-mjmxx-list">
-                @foreach($latestnewslist2s as $latestnewslist2)
-                <li class="anxjm-mper-jmxx o-h">
-                    <a href="/news/{{$latestnewslist2['id']}}" class="d-b anxjm-mjmxx-img fl" title="{{$latestnewslist2['title']}}"><img src="{{$latestnewslist2['litpic']}}" alt="{{$latestnewslist2['title']}}"></a>
-                    <div class="fr anxjm-mjmxx-msg">
-                        <a href="/news/{{$latestnewslist2['id']}}"  title="{{$latestnewslist2['title']}}" class="d-b color-333 anxjm-mjmxx-title font-weight">{{$latestnewslist2['title']}}</a>
-                        <p class="o-h"><a href="/news/{{$latestnewslist2['topreal_path']}}/{{$latestnewslist2['typeid']}}" class="fl font32 color-999" title="{{$latestnewslist2['typename']}}"><i class="iconfont icon-leixing-biaoqian"></i> {{$latestnewslist2['typename']}}</a><span class="fr anxjm-mtime">{{date('Y-m-d',strtotime($latestnewslist2['created_at']))}}</span></p>
-                    </div>
-                </li>
-                @endforeach
-            </ul>
-        </div>
-    </div>
-    <div class="news-container">
-        <div class="anxjm-mper-section">
-            <div class="o-h">
-                <h3 class="o-h fl"><span class="fl d-b font40 color-000 font-weight m-r10"><i class="iconfont icon-kaocha"></i> 加盟知识</span></h3>
-            </div>
-            <ul class="anxjm-mjmxx-list">
-                @foreach($zhishilists as $zhishilist)
-                    <li class="anxjm-mper-jmxx o-h">
-                        <a href="/zhishi/{{$zhishilist['id']}}" class="d-b anxjm-mjmxx-img fl" title="{{$zhishilist['title']}}"><img src="{{$zhishilist['litpic']}}" alt="{{$zhishilist['title']}}"></a>
-                        <div class="fr anxjm-mjmxx-msg">
-                            <a href="/zhishi/{{$zhishilist['id']}}"  title="{{$zhishilist['title']}}" class="d-b color-333 anxjm-mjmxx-title font-weight">{{$zhishilist['title']}}</a>
-                            <p class="o-h"><a href="/zhishi/{{$zhishilist['topreal_path']}}/{{$zhishilist['typeid']}}" class="fl font32 color-999" title="{{$zhishilist['typename']}}"><i class="iconfont icon-leixing-biaoqian"></i> {{$zhishilist['typename']}}</a><span class="fr anxjm-mtime">{{date('Y-m-d',strtotime($zhishilist['created_at']))}}</span></p>
-                        </div>
+            <div class="i_pro_list">
+                <ul>
+                    @foreach($productions as $production)
+                    <li>
+                        <a data-type="mip"  title="{{$production->title}}" href="/article/{{$production->id}}.shtml">
+                            <div class="i_pro_img"><mip-img layout="responsive" width="160" height="160" src="{{$production->litpic}}" alt="{{$production->title}}" class="mip-element mip-layout-responsive mip-layout-size-defined mip-img-loaded"><mip-i-space style="display: block; padding-top: 80%;">space</mip-i-space><img class="mip-fill-content mip-replaced-content" src="{{$production->litpic}}" alt="{{$production->title}}"></mip-img></div>
+                            <div class="i_pro_text">{{str_limit($production->title,30,'')}}</div>
+                        </a>
                     </li>
-                @endforeach
-            </ul>
+                    @endforeach
+                </ul>
+            </div>
         </div>
+        <div class="i_main_more"><a data-type="mip" data-title="奶茶产品" href="/productions">点击查看更多满气茶奶茶店加盟奶茶产品 >></a></div>
     </div>
-@stop
-@section('footer_libs')
+    <div class="i_pro_box">
+        <div class="i_pro_m">
+            <div class="i_title">
+                <h6>店面形象</h6>
+                <span>满气茶奶茶中国风店面形象，希望能帮助您快速的了解满气茶奶茶的店铺风格！</span>
+            </div>
+            <div class="i_pro_list">
+                <ul>
+                    @foreach($dianmians as $dianmian)
+                    <li>
+                        <a data-type="mip" data-title="{{$dianmian->title}}" title="{{$dianmian->title}}" href="/article/{{$dianmian->id}}.shtml">
+                            <div class="i_pro_img"><mip-img layout="responsive" width="160" height="160" src="{{$dianmian->litpic}}" alt="{{$dianmian->title}}" class="mip-element mip-layout-responsive mip-layout-size-defined mip-img-loaded"><mip-i-space style="display: block; padding-top: 80%;">space</mip-i-space><img class="mip-fill-content mip-replaced-content" src="{{$dianmian->litpic}}" alt="{{$dianmian->title}}"></mip-img></div>
+                            <div class="i_pro_text">{{str_limit($dianmian->title,30,'')}}</div>
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        <div class="i_main_more"><a data-type="mip" data-title="店面形象" href="/dianmian/">点击查看更多满气茶奶茶店加盟店面形象 >></a></div>
+    </div>
+    <div class="i_new_box">
+        <div class="i_new_m">
+            <div class="i_title">
+                <h6>新闻中心</h6>
+                <span>感谢您关注满气茶奶茶店加盟的最新新闻动态，满气茶奶茶将在这里发布最新的企业动态和产品信息！</span>
+            </div>
+            <div class="i_new_list">
+                <ul>
+                    @foreach($newslists as $newslist)
+                    <li><a data-type="mip" data-title="{{$newslist->title}}" href="/article/{{$newslist->id}}.shtml">{{$newslist->title}}</a><span>发布时间：{{date('Y-m-d',strtotime($newslist->created_at))}}  浏览次数：{{$newslist->click}}</span></li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        <div class="i_main_more"><a data-type="mip" data-title="新闻中心" href="/news/">点击查看更多满气茶奶茶店加盟新闻动态 >></a></div>
+    </div>
+    <script src="/mobile/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="/mobile/js/pageSwitch.min.js"></script>
     <script>
-        $(function () {
-            iliHeight = $("#moocBox").height();
-            setTimeout(startScroll, delay);
-        });
-        //滚动
-        var iliHeight;
-        var area = document.getElementById('moocBox');
-        var speed = 2;
-        var time;
-        var delay = 3000;
-        area.scrollTop = 0;
-        area.innerHTML += area.innerHTML;
-
-        function startScroll() {
-            time = setInterval("scrollUp()", speed);
-            area.scrollTop++;
-        }
-
-        function scrollUp() {
-            if (area.scrollTop % (iliHeight) == 0) {
-                clearInterval(time);
-                setTimeout(startScroll, delay);
-            } else {
-                area.scrollTop++;
-                if (area.scrollTop >= area.scrollHeight / 2) {
-                    area.scrollTop = 0;
-                }
-            }
-        }
-        $(".tab-box-flex span").click(function () {
-            $(".catering-list").hide().eq($(this).index()).show();
-            $(this).addClass("cur").siblings().removeClass("cur");
+        $("#container").PageSwitch({
+            direction:'horizontal',
+            easing:'ease-in',
+            duration:1000,
+            autoPlay:true,
+            loop:'false'
         });
     </script>
 @stop

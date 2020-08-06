@@ -42,12 +42,12 @@
                             <tr>
                                 <td>{{$article->id}}</td>
                                 <td>@if($article->ismake) {{$article->title}} @else <s class="red">{{$article->title}}</s> @endif </td>
-                                <td>@if($article->typeid){{$article->arctype->typename}}@else 未分类 @endif</td>
+                                <td>{{$article->arctype->typename}}</td>
                                 <td>@if(\Carbon\Carbon::now() > \Carbon\Carbon::parse($article->published_at)->addDays(7)){{$article->published_at}} @else{{\Carbon\Carbon::parse($article->published_at)->diffForHumans()}}@endif </td>
                                 <td>{{$article->write}}</td>
                                 <td>{{$article->click}}</td>
                                 <td>@if($article->ismake) 已审核 @else <s class="red">未审核</s> @endif</td>
-                                <td class="astyle"><span class="label label-success"><a @if($article->mid==1) href="/news/{{$article->id}}"  @else href="/wenda/{{$article->id}}"  @endif target="_blank">预览</a></span><span class="label label-warning"><a href="/admin/article/edit/{{$article->id}}">编辑</a></span><span class="label label-danger"><a data-toggle="modal" data-target=".modal-sm{{$article->id}}" >删除</a></span>
+                                <td class="astyle"><span class="label label-success"><a href="/article/{{$article->id}}.shtml" target="_blank">预览</a></span><span class="label label-warning"><a href="/admin/article/edit/{{$article->id}}">编辑</a></span><span class="label label-danger"><a data-toggle="modal" data-target=".modal-sm{{$article->id}}" >删除</a></span>
                                     <div class="modal fade modal-sm{{$article->id}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel{{$article->id}}">
                                         <div class="modal-dialog modal-sm modal-s-m{{$article->id}}" role="document">
                                             <div class="modal-content">

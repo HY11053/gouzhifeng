@@ -1,100 +1,108 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html mip="" class="mip-i-android-scroll trigger-layout">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <meta name="wap-font-scale" content="no"/>
-    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="applicable-device" content="mobile">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta http-equiv="Cache-Control" content="no-cache"/>
-    <meta name="csrf-token" content=" {{ csrf_token() }}">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet" type="text/css" href="/mobile/css/mip.css">
     <title>@yield('title')</title>
     <meta name="keywords" content="@yield('keywords')"/>
     <meta name="description" content="@yield('description')"/>
-    <link rel="canonical" href="{{config('app.url')}}{{Request::getrequesturi()}}" >
-    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css"/>
-    <link href="/mobile/css/iconfont.css" rel="stylesheet" type="text/css"/>
-    <link href="/mobile/css/swiper.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="canonical" href="{{config('app.url')}}{{Request::getrequesturi()}}" />
+    <link rel="stylesheet" href="/mobile/css/pageSwitch.min.css">
+    <style>
+        #head__3vc99r518zl{display: block;width: 100%;clear: both;height:40px;}
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        #container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .sections,.section {
+            height:100%;
+        }
+        #container,.sections {
+            position: relative;
+        }
+        .section {
+            background-color: #000;
+            background-size: cover;
+            background-position: 50% 50%;
+            text-align: center;
+            color: white;
+        }
+        #section0 {
+            background-image: url('/frontend/images/20181017114433335249.jpg');
+        }
+        #section1 {
+            background-image: url('/frontend/images/20181017114447291076.jpg');
+        }
+    </style>
+
 </head>
-<body>
-<div class="clearfix anxjm-mtop84">
-    <div class="search clearfix">
-        <div class="logo fl">
-            <a href="/"><img src="/mobile/images/logo.png" alt="3198创业致富网"/></a>
-        </div>
-        <div class="searchCon fl">
-            <form action="/search" method="get">
-                {{csrf_field()}}
-                <div class="ipt-box"></div>
-                <input class="ipt-placeholder" name="key" placeholder="输入您想找的项目" />
-                <input type="hidden" name="type" value="1">
-                <button type="submit" class="search_btn"></button>
-            </form>
-        </div>
-        <div class="message fr">
-            <b>项目分类</b>
-        </div>
-        <div class="d_nav">
-            <ul>
-                <li><a href="/" target="_self"><span>首页</span></a></li>
-                <li><a href="/xm" target="_self"><span>项目大全</span></a></li>
-                <li><a href="/cyms" target="_self"><span>餐饮</span></a></li>
-                <li><a href="/fzxb" target="_self"><span>服装</span></a></li>
-                <li><a href="/mrbj" target="_self"><span>美容</span></a></li>
-                <li><a href="/shfw" target="_self"><span>服务</span></a></li>
-                <li><a href="/jjyp/" target="_self"><span>家居</span></a></li>
-                <li>热门行业</li>
-                <li><a href="/jczs/" target="_self"><span>建材</span></a></li>
-                <li><a href="/lpsp" target="_self"><span>礼品</span></a></li>
-                <li><a href="/qcfw" target="_self"><span>汽车</span></a></li>
-                <li><a href="/jywl" target="_self"><span>教育</span></a></li>
-                <li><a href="/myyp" target="_self"><span>母婴</span></a></li>
-                <li><a href="/shfw/179" target="_self"><span>干洗</span></a></li>
-                <li><a href="/cyms" target="_self"><span>火锅</span></a></li>
-                <li><a href="/fcyms/3" target="_self"><span>饮品</span></a></li>
-                <li><a href="/cyms/204" target="_self"><span>烧烤</span></a></li>
-                <li><a href="/cyms/2" target="_self"><span>小吃</span></a></li>
-            </ul>
+<body class="mip-i-android-scroll trigger-layout" style="padding-bottom: 0px !important; margin-bottom: 0px !important;">
+<div class="main_box">
+    <div class="i_logo_box">
+        <div class="i_logo_m">
+            <div class="logo"><a title="国潮茶饮满气茶奶茶加盟官网" href="/"><img src="/mobile/images/logo.png" align="center" alt="国潮茶饮满气茶奶茶加盟官网" /><span class="imgmid"></span></a></div>
+            <div class="top_tel"><br></div>
         </div>
     </div>
-</div>
-
-@yield('main_content')
-
-<div class="clearfix">
-    <div class="related-tit bg-fff mgt20 tabs-tit">
-        <b>隐私保护</b>
-        <div class="btn-one-more fr">
-        </div>
-    </div>
-    <div class="tabs-ctn">
-        <ul class="content1 cy-item ">
-            <li><a href="javascript:;">
-                    <p class="online-name1">1. 投资有风险，加盟需谨慎</p>
-                    <p class="online-name1">2.多打电话、多咨询、实地考察，可降低投资风险！</p>
-                    <p class="online-name1">3. 我方平台为信息发布平台，内容由用户自行提供，内容的真实性、准确性由用户自行负责，本平台对此不承担任何法律风险</p>
-                    <p class="online-name1">4. 网站信息如涉嫌违规或违反相关法律规定，请联系我们，我们删除</p>
-                </a>
+    <nav>
+        <ul>
+            <li class="active">
+                <div class="nav_img"><a href="/" class="btn_1"></a></div>
+                <div class="nav_txt">首页</div>
+            </li>
+            <li>
+                <div class="nav_img"><a href="/about" class="btn_2"></a></div>
+                <div class="nav_txt">品牌</div>
+            </li>
+            <li>
+                <div class="nav_img"><a href="/productions" class="btn_3"></a></div>
+                <div class="nav_txt">产品</div>
+            </li>
+            <li>
+                <div class="nav_img"><a href="/dianmian" class="btn_4"></a></div>
+                <div class="nav_txt">店面</div>
+            </li>
+            <li>
+                <div class="nav_img"><a href="/news" class="btn_6"></a></div>
+                <div class="nav_txt">动态</div>
+            </li>
+            <li>
+                <div class="nav_img"><a href="/news/jmnews" class="btn_5"></a></div>
+                <div class="nav_txt">新闻</div>
+            </li>
+            <li>
+                <div class="nav_img"><a href="#" target="_blank" class="btn_7"></a></div>
+                <div class="nav_txt">加盟</div>
+            </li>
+            <li>
+                <div class="nav_img"><a href="#" target="_blank" class="btn_8"></a></div>
+                <div class="nav_txt">咨询</div>
             </li>
         </ul>
-    </div>
+    </nav>
+   @yield('main')
+    <footer>
+        <div class="i_f_con">
+            <div class="f_con_tel"><a href="tel:4000-720-777">4000-720-777</a></div>
+            <div class="f_con_add"><span>江苏省南京市鼓楼区管家桥85号华容大夏7楼整层</span></div>
+        </div>
+        <div class="i_copy">© 2020 满气茶奶茶店加盟官网 版权所有</div>
+
+    </footer>
 </div>
-<footer>
-    <div class="link-box ">
-        <a href="{{config('app.url')}}" class="foot-link">电脑版</a><span class="v-line">|</span>
-        <a href="/xm/" class="foot-link">品牌大全</a><span class="v-line">|</span>
-        <a href="/about.html" class="foot-link" rel="nofollow">关于我们</a><span class="v-line">|</span>
-        <a href="/contact.html" class="foot-link"  rel="nofollow">联系我们</a><span class="v-line">|</span>
-        <a href="/copyright.html" class="foot-link"  rel="nofollow">法律声明</a>
-    </div>
-    <p class="firm clearfix">
-        <span class="foot-text mgr15">上海佐赛网络科技有限公司 	 版权所有</span>
-    </p>
-</footer>
-<script type="text/javascript" src="/mobile/js/jquery.min.js"></script>
-<script type="text/javascript" src="/mobile/js/swiper.min.js"></script>
-<script type="text/javascript" src="/mobile/js/index.js"></script>
-@yield('footer_libs')
+<mip-shell class="mip-element mip-layout-container"></mip-shell>
 </body>
 </html>

@@ -102,12 +102,12 @@ return [
     | Site home page key words and description and record information
     | and other related settings
     */
-    'webname'=>'3198商机网-值得信赖的创业_加盟_致富商机网',
-    'indexname'=>'3198创业致富网',
-    'keywords'=>'3198创业致富网,创业致富网,商机查询网',
-    'description'=>'3198商机网是专业的商机创业网站,每天提供最新商机好项目,涵盖餐饮加盟、服饰加盟、美容加盟等热门行业小本创业商机,创业找项目就上3198商机网。',
-    'api'=>'http://data.zz.baidu.com/urls?site=www.3198.com&token=QeSFIvl5RWRgU3BT',
-    'm_api'=>'http://data.zz.baidu.com/urls?site=https://m.3198.com&token=QeSFIvl5RWRgU3BT',
+    'webname'=>'满气茶',
+    'indexname'=>'满气茶',
+    'keywords'=>'满气茶',
+    'description'=>'满气茶',
+    'api'=>'',
+    'm_api'=>'',
     'cachetime'=>30*24*60*60,
     /*
 
