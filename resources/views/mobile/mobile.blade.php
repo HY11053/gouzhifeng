@@ -96,8 +96,8 @@
    @yield('main')
     <footer>
         <div class="i_f_con">
-            <div class="f_con_tel"><a href="tel:4000-720-777">4000-720-777</a></div>
-            <div class="f_con_add"><span>江苏省南京市鼓楼区管家桥85号华容大夏7楼整层</span></div>
+            <div class="f_con_tel"><a href="tel:400-110-7300">400-110-7300</a></div>
+            <div class="f_con_add"><span>上海市松江区延展路455号汉桥文化科技园A幢4楼</span></div>
         </div>
         <div class="i_copy">© 2020 满气茶奶茶店加盟官网 版权所有</div>
 

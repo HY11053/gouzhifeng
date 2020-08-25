@@ -23,7 +23,6 @@ class CreatePhonemanagesTable extends Migration
             $table->string('note')->nullable();
             $table->string('host')->nullable();
             $table->text('referer')->nullable();
-            $table->index('phoneno');
             $table->index('host');
             $table->timestamps();
         });

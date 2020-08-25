@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['domain' => 'm.gouzhifeng.net'], function () {
+Route::group(['domain' => 'm.manqicha.net'], function () {
     Route::get('/','Mobile\IndexController@Index');
     Route::get('about','Mobile\ListArticleController@About');
     Route::get('productions','Mobile\ListArticleController@Productions');

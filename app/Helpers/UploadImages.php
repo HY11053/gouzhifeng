@@ -34,7 +34,7 @@ class UploadImages
         }
         $extension = $file->getClientOriginalExtension();
         $path = Storage::putFileAs($storePath, $file, md5(time()+rand(1,19999)).'.'.$extension);
-        $image=Image::make(storage_path('app/').$path);
+        /*$image=Image::make(storage_path('app/').$path);
         if ($image->width()>$image->height())
         {
             $image->resize(350, null,function ($constraint) {
@@ -44,7 +44,7 @@ class UploadImages
             $image->resize(null, 320,function ($constraint) {
                 $constraint->aspectRatio();
             })->save(storage_path('app/').$path);
-        }
+        }*/
         $path='/storage'.ltrim($path,'public');
         return $path;
     }

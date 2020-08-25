@@ -29,8 +29,8 @@ $factory->define(User::class, function (Faker $faker) {
 $factory->define(App\AdminModel\Admin::class, function (Faker $faker) {
     static $password;
     return [
-        'name' => '梁李良',
-        'email' => 'liang569874@163.com',
+        'name' => 'weicencen',
+        'email' => 'weicencen@163.com',
         'type' => '1',
         'password' => $password ?: $password = bcrypt('secret'),
     ];

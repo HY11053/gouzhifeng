@@ -17,8 +17,8 @@
 <div class="i_header_box">
     <div class="i_top_box">
         <div class="i_top_m">
-            <div class="top_text">您好，欢迎访问南京九州盛世餐饮管理有限公司旗下品牌-国潮茶饮满气茶奶茶加盟官网！</div>
-            <div class="top_tel">4000-720-777</div>
+            <div class="top_text">您好，欢迎访问南京同仁堂授权-国潮茶饮满气茶奶茶加盟官网！</div>
+            <div class="top_tel">400-110-7300</div>
         </div>
     </div>
     <div class="i_logo_box">
@@ -66,10 +66,10 @@
             <div class="i_f_con">
                 <div class="f_con_tel">
                     <span>全国24小时免费加盟热线</span>
-                    <h6>4000-720-777</h6>
+                    <h6>400-110-7300</h6>
                 </div>
                 <div class="f_con_list">
-                    <p><i><img src="/frontend/images/f_ico.png"></i>江苏省南京市鼓楼区管家桥85号华容大厦7楼整层</p>
+                    <p><i><img src="/frontend/images/f_ico.png"></i>上海市松江区延展路455号汉桥文化科技园A幢4楼</p>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
     <div class="i_f_copy">
         <div class="f_copy">
             <div class="copy_text">
-                地址：江苏省南京市鼓楼区管家桥85号华容大厦7楼 备案号：
+                地址：上海市松江区延展路455号汉桥文化科技园A幢4楼 备案号：
                 <a href="http://www.beian.miit.gov.cn" target="_blank" style="color:#FFF">苏ICP备18025685号</a>
                 <br>国潮茶饮-满气茶奶茶加盟官网 版权所有 © All rights reserved
                 <a title="网站地图" href="/storage/sitemap.xml" target="_blank">网站地图</a>

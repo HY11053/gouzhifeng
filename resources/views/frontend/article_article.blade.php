@@ -35,7 +35,7 @@
             <div class="sidebar_con_box">
                 <div class="p_sidebar_title">联系我们</div>
                 <div class="sidebar_con_list">
-                    <p><span style="background-color: initial;">电话：4000-720-777</span><br></p><p>地址：江苏省南京市鼓楼区管家桥85号华荣大厦7楼整层</p>	</div>
+                    <p><span style="background-color: initial;">电话：400-110-7300</span><br></p><p>地址：上海市松江区延展路455号汉桥文化科技园A幢4楼</p>	</div>
             </div>
         </div>	<div class="p_r_box">
             <div class="p_r_title">

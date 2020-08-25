@@ -29,7 +29,7 @@ class ImageUploadController extends Controller
                 }
                 $extension = $file->getClientOriginalExtension();
                 $path = Storage::putFileAs($storePath, $file, md5(time()+rand(1500,2511)).'.'.$extension);
-                $image=Image::make(storage_path('app/').$path);
+                /*$image=Image::make(storage_path('app/').$path);
                 if ($image->width()>$image->height())
                 {
                     $image->resize(350, null,function ($constraint) {
@@ -39,7 +39,7 @@ class ImageUploadController extends Controller
                     $image->resize(null, 200,function ($constraint) {
                         $constraint->aspectRatio();
                     })->save(storage_path('app/').$path);
-                }
+                }*/
                 $litpic= '/storage'.ltrim($path,'public');
                 return json_encode(array('link'=>"$litpic"));
             }
